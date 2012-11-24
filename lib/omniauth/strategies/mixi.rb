@@ -19,16 +19,19 @@ module OmniAuth
 
       info do
         {
-          'displayName' => raw_info['displayName'],
-          'profileUrl' => raw_info['profileUrl'],
-          'thumbnailUrl' => raw_info['thumbnailUrl']
+          'name' => raw_info['displayName'],
+          'nickname' => raw_info['displayName'],
+          'urls' => {
+            'Profile' => raw_info['profileUrl']
+          },
+          'image' => raw_info['thumbnailUrl']
         }
       end
 
       extra do
-        {
-          :raw_info => raw_info
-        }
+        hash = {}
+        hash['raw_info'] = raw_info unless skip_info?
+        hash
       end
 
       def raw_info
