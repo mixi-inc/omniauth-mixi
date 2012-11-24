@@ -8,17 +8,17 @@ mixi uses the OAuth2 server flow, you can read about it here: http://developer.m
 
 So ket's say you're using Rails, you need to add the strategy to your `Gemfile`:
 
-  gem 'omniauth-mixi'
+    gem 'omniauth-mixi'
 
 You can also pull them in directly from Github e.g.:
 
-  gem 'omniauth-mixi', git => 'https://github.com/yoichiro/omniauth-mixi.git'
+    gem 'omniauth-mixi', git => 'https://github.com/yoichiro/omniauth-mixi.git'
 
 Once these are in, you need to add the following to your `config/initializers/omniauth.rb`:
 
-  Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :mixi, 'consumer_key', 'consumer_secret'
-  end
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :mixi, 'consumer_key', 'consumer_secret'
+    end
 
 You will obviously have to put in your key and secret, which you get when you register your app with Partner Dashboard.
 
