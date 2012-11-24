@@ -28,6 +28,9 @@ Now just follow the README at: https://github.com/intridea/omniauth
 
 OmniAuth mixi is tested under 1.9.3.
 
+[![CI Build
+Status](https://secure.travis-ci.org/yoichiro/omniauth-mixi.png)](http://travis-ci.org/yoichiro/omniauth-mixi)
+
 ## License
 
 Copyright (c) 2012 by Yoichiro Tanaka
