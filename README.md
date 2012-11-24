@@ -6,7 +6,7 @@ mixi uses the OAuth2 server flow, you can read about it here: http://developer.m
 
 ## How To Use It
 
-So ket's say you're using Rails, you need to add the strategy to your `Gemfile`:
+So let's say you're using Rails, you need to add the strategy to your `Gemfile`:
 
     gem 'omniauth-mixi'
 
@@ -23,6 +23,18 @@ Once these are in, you need to add the following to your `config/initializers/om
 You will obviously have to put in your key and secret, which you get when you register your app with Partner Dashboard.
 
 Now just follow the README at: https://github.com/intridea/omniauth
+
+## How To Launch Example
+
+This project includes an example application to try OmniAuth-mixi quickly. You can launch the example by the following commands:
+
+    $ cd example
+    $ bundle install
+    $ CLIENT_ID=[consumer_key] CLIENT_SECRET=[consumer_secret] rackup
+
+Of course, you have to replace the two parameters `[consumer_key]` and `[consumer_secret]` to them issued for your application.
+
+And, open http://localhost:9292/ in your browser, then you will see the authentication and authorization page of mixi.
 
 ## Supported Rubies
 
