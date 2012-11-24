@@ -11,7 +11,7 @@ describe OmniAuth::Strategies::Mixi do
     end
 
     it 'should have correct site' do
-      @options.site.should == 'https://api.mixi-platform.com/2'
+      @options.site.should == 'https://api.mixi-platform.com'
     end
 
     it 'should have correct authorize url' do
