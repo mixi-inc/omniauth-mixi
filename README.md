@@ -50,7 +50,7 @@ Here's an example Auth Hash available in `request.env['omniauth.auth']`:
     :name => 'Yoichiro Tanaka',
     :first_name => 'Yoichiro',
     :last_name => 'Tanaka',
-    :description => 'I'm an engineer. And, ...',
+    :description => 'I am an engineer. And, ...',
     :location => 'Hasuda-shi, Saitama pref.',
     :nickname => 'Yoichiro',
     :urls => {
@@ -72,7 +72,7 @@ Here's an example Auth Hash available in `request.env['omniauth.auth']`:
         :locality => 'Hasuda-shi'
       }],
       :thumbnailUrl => 'https://profile.img.mixi.jp/1234567.jpg',
-      :aboutMe => 'I'm an engineer. And, ...',
+      :aboutMe => 'I am an engineer. And, ...',
       :name => {
         :givenName => 'Yoichiro',
         :familyName => 'Tanaka'
