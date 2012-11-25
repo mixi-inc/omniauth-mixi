@@ -30,6 +30,53 @@ When you define like the Builder above, you will retrieve basic user's informati
 
 Now just follow the README at: https://github.com/intridea/omniauth
 
+## Auth Hash
+
+Here's an example Auth Hash available in `request.env['omniauth.auth']`:
+
+    {
+      :provider => 'mixi',
+      :uid => '1234567',
+      :info => {
+        :name => 'Yoichiro Tanaka',
+        :first_name => 'Yoichiro',
+        :last_name => 'Tanaka',
+        :description => 'I'm an engineer. And, ...',
+        :location => 'Hasuda-shi, Saitama pref.',
+        :nickname => 'Yoichiro',
+        :urls => {
+          :profile => 'http://mixi.jp/show_friend.pl?uid=1234567'
+        },
+        :image => 'https://profile.img.mixi.jp/1234567.jpg'
+      },
+      :credentials => {
+        :token => 'ABCDEFG...', # OAuth 2.0 access_token, which you may wish to store
+        :refresh_token => 'HIJKLMN...',
+        :expires_at => 1353854879, # when the access token expires (it always will)
+        :expires => true
+      },
+      :extra => {
+        :raw_info => {
+          :addresses => [{
+            :region => 'Saitama pref.',
+            :type => 'location',
+            :locality => 'Hasuda-shi'
+          }],
+          :thumbnailUrl => 'https://profile.img.mixi.jp/1234567.jpg',
+          :aboutMe => 'I'm an engineer. And, ...',
+          :name => {
+            :givenName => 'Yoichiro',
+            :familyName => 'Tanaka'
+          },
+          :id => '1234567',
+          :profileUrl => 'http://mixi.jp/show_friend.pl?uid=1234567',
+          :displayName => 'Yoichiro'
+        }
+      }
+    }
+
+The precise information available may depend on the permissions which you request.
+
 ## How To Launch Example
 
 This project includes an example application to try OmniAuth-mixi quickly. You can launch the example by the following commands:
