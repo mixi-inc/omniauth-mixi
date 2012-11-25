@@ -22,6 +22,12 @@ Once these are in, you need to add the following to your `config/initializers/om
 
 You will obviously have to put in your key and secret, which you get when you register your app with Partner Dashboard.
 
+When you define like the Builder above, you will retrieve basic user's informations. If you want to retrieve minimum information set only, the parameter ':info_level' can be used:
+
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :mixi, 'consumer_key', 'consumer_secret', :info_level => :min
+    end
+
 Now just follow the README at: https://github.com/intridea/omniauth
 
 ## How To Launch Example
