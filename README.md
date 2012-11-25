@@ -8,25 +8,33 @@ mixi uses the OAuth2 server flow, you can read about it here: http://developer.m
 
 So let's say you're using Rails, you need to add the strategy to your `Gemfile`:
 
-    gem 'omniauth-mixi'
+```ruby
+gem 'omniauth-mixi'
+```
 
 You can also pull them in directly from Github e.g.:
 
-    gem 'omniauth-mixi', git => 'https://github.com/yoichiro/omniauth-mixi.git'
+```ruby
+gem 'omniauth-mixi', git => 'https://github.com/yoichiro/omniauth-mixi.git'
+```
 
 Once these are in, you need to add the following to your `config/initializers/omniauth.rb`:
 
-    Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :mixi, 'consumer_key', 'consumer_secret'
-    end
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :mixi, 'consumer_key', 'consumer_secret'
+end
+```
 
 You will obviously have to put in your key and secret, which you get when you register your app with Partner Dashboard.
 
 When you define like the Builder above, you will retrieve basic user's informations. If you want to retrieve minimum information set only, the parameter ':info_level' can be used:
 
-    Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :mixi, 'consumer_key', 'consumer_secret', :info_level => :min
-    end
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :mixi, 'consumer_key', 'consumer_secret', :info_level => :min
+end
+```
 
 Now just follow the README at: https://github.com/intridea/omniauth
 
@@ -34,46 +42,48 @@ Now just follow the README at: https://github.com/intridea/omniauth
 
 Here's an example Auth Hash available in `request.env['omniauth.auth']`:
 
-    {
-      :provider => 'mixi',
-      :uid => '1234567',
-      :info => {
-        :name => 'Yoichiro Tanaka',
-        :first_name => 'Yoichiro',
-        :last_name => 'Tanaka',
-        :description => 'I'm an engineer. And, ...',
-        :location => 'Hasuda-shi, Saitama pref.',
-        :nickname => 'Yoichiro',
-        :urls => {
-          :profile => 'http://mixi.jp/show_friend.pl?uid=1234567'
-        },
-        :image => 'https://profile.img.mixi.jp/1234567.jpg'
+```ruby
+{
+  :provider => 'mixi',
+  :uid => '1234567',
+  :info => {
+    :name => 'Yoichiro Tanaka',
+    :first_name => 'Yoichiro',
+    :last_name => 'Tanaka',
+    :description => 'I'm an engineer. And, ...',
+    :location => 'Hasuda-shi, Saitama pref.',
+    :nickname => 'Yoichiro',
+    :urls => {
+      :profile => 'http://mixi.jp/show_friend.pl?uid=1234567'
+    },
+    :image => 'https://profile.img.mixi.jp/1234567.jpg'
+  },
+  credentials => {
+    :token => 'ABCDEFG...', # OAuth 2.0 access_token, which you may wish to store
+    :refresh_token => 'HIJKLMN...',
+    :expires_at => 1353854879, # when the access token expires (it always will)
+    :expires => true
+  },
+  :extra => {
+    :raw_info => {
+      :addresses => [{
+        :region => 'Saitama pref.',
+        :type => 'location',
+        :locality => 'Hasuda-shi'
+      }],
+      :thumbnailUrl => 'https://profile.img.mixi.jp/1234567.jpg',
+      :aboutMe => 'I'm an engineer. And, ...',
+      :name => {
+        :givenName => 'Yoichiro',
+        :familyName => 'Tanaka'
       },
-      :credentials => {
-        :token => 'ABCDEFG...', # OAuth 2.0 access_token, which you may wish to store
-        :refresh_token => 'HIJKLMN...',
-        :expires_at => 1353854879, # when the access token expires (it always will)
-        :expires => true
-      },
-      :extra => {
-        :raw_info => {
-          :addresses => [{
-            :region => 'Saitama pref.',
-            :type => 'location',
-            :locality => 'Hasuda-shi'
-          }],
-          :thumbnailUrl => 'https://profile.img.mixi.jp/1234567.jpg',
-          :aboutMe => 'I'm an engineer. And, ...',
-          :name => {
-            :givenName => 'Yoichiro',
-            :familyName => 'Tanaka'
-          },
-          :id => '1234567',
-          :profileUrl => 'http://mixi.jp/show_friend.pl?uid=1234567',
-          :displayName => 'Yoichiro'
-        }
-      }
+      :id => '1234567',
+      :profileUrl => 'http://mixi.jp/show_friend.pl?uid=1234567',
+      :displayName => 'Yoichiro'
     }
+  }
+}
+```
 
 The precise information available may depend on the permissions which you request.
 
