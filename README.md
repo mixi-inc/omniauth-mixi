@@ -18,6 +18,8 @@ You can also pull them in directly from Github e.g.:
 gem 'omniauth-mixi', git => 'https://github.com/yoichiro/omniauth-mixi.git'
 ```
 
+Then `bundle install` to install dependencies.
+
 Once these are in, you need to add the following to your `config/initializers/omniauth.rb`:
 
 ```ruby
@@ -28,7 +30,7 @@ end
 
 You will obviously have to put in your key and secret, which you get when you register your app with Partner Dashboard.
 
-When you define like the Builder above, you will retrieve basic user's informations. If you want to retrieve minimum information set only, the parameter ':info_level' can be used:
+When you define like the Builder above, you will retrieve basic user's informations. If you want to retrieve minimum information set only, the parameter `:info_level` can be used:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
