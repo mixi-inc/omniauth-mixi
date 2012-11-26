@@ -11,6 +11,7 @@ So let's say you're using Rails, you need to add the strategy to your `Gemfile`:
 ```ruby
 gem 'omniauth-mixi'
 ```
+(11/26/2012) This is not registered to Rubygems yet.
 
 You can also pull them in directly from Github e.g.:
 
