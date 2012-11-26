@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+PEOPLE_API = '/2/people/@me/@self?fields=@all'
+
 describe OmniAuth::Strategies::Mixi do
   subject do
     OmniAuth::Strategies::Mixi.new({})
@@ -89,10 +91,7 @@ describe OmniAuth::Strategies::Mixi do
       access_token.should_receive(:options).exactly(8).and_return(options)
       api_result = mock('api_result')
       api_result.should_receive(:parsed).and_return(parsed_entry)
-      access_token
-        .should_receive(:get)
-        .with('/2/people/@me/@self?fields=@all')
-        .and_return(api_result)
+      access_token.should_receive(:get).with(PEOPLE_API).and_return(api_result)
       subject.access_token = access_token
     end
 
@@ -117,13 +116,8 @@ describe OmniAuth::Strategies::Mixi do
       access_token = mock('access_token')
       access_token.should_receive(:options).exactly(11).and_return(options)
       api_result = mock('api_result')
-      api_result
-        .should_receive(:parsed)
-        .and_return(parsed_entry_without_name)
-      access_token
-        .should_receive(:get)
-        .with('/2/people/@me/@self?fields=@all')
-        .and_return(api_result)
+      api_result.should_receive(:parsed).and_return(parsed_entry_without_name)
+      access_token.should_receive(:get).with(PEOPLE_API).and_return(api_result)
       subject.access_token = access_token
     end
 
@@ -153,10 +147,7 @@ describe OmniAuth::Strategies::Mixi do
       }
       api_result = mock('api_result')
       api_result.should_receive(:parsed).and_return(parsed)
-      access_token
-        .should_receive(:get)
-        .with('/2/people/@me/@self?fields=@all')
-        .and_return(api_result)
+      access_token.should_receive(:get).with(PEOPLE_API).and_return(api_result)
       subject.access_token = access_token
     end
 
@@ -173,10 +164,7 @@ describe OmniAuth::Strategies::Mixi do
       access_token.should_receive(:options).exactly(1).and_return(options)
       api_result = mock('api_result')
       api_result.should_receive(:parsed).and_return(parsed_entry)
-      access_token
-        .should_receive(:get)
-        .with('/2/people/@me/@self?fields=@all')
-        .and_return(api_result)
+      access_token.should_receive(:get).with(PEOPLE_API).and_return(api_result)
       subject.access_token = access_token
     end
 
