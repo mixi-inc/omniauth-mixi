@@ -16,7 +16,7 @@ gem 'omniauth-mixi'
 You can also pull them in directly from Github e.g.:
 
 ```ruby
-gem 'omniauth-mixi', git => 'https://github.com/yoichiro/omniauth-mixi.git'
+gem 'omniauth-mixi', git => 'https://github.com/mixi-inc/omniauth-mixi.git'
 ```
 
 Then `bundle install` to install dependencies.
