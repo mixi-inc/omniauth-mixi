@@ -107,8 +107,8 @@ And, open http://localhost:9292/ in your browser, then you will see the authenti
 OmniAuth mixi is tested under 1.8.7, 1.9.2, 1.9.3 and JRuby.
 
 [![CI Build
-Status](https://secure.travis-ci.org/yoichiro/omniauth-mixi.png)](http://travis-ci.org/yoichiro/omniauth-mixi)
-[![Dependency Status](https://gemnasium.com/yoichiro/omniauth-mixi.png)](https://gemnasium.com/yoichiro/omniauth-mixi)
+Status](https://secure.travis-ci.org/mixi-inc/omniauth-mixi.png)](http://travis-ci.org/mixi-inc/omniauth-mixi)
+[![Dependency Status](https://gemnasium.com/mixi-inc/omniauth-mixi.png)](https://gemnasium.com/mixi-inc/omniauth-mixi)
 
 ## License
 
