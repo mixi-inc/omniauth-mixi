@@ -49,6 +49,10 @@ module OmniAuth
           access_token.get('/2/people/@me/@self?fields=@all').parsed['entry']
       end
 
+      def callback_url
+        full_host + script_name + callback_path
+      end
+
       def authorize_params
         super.tap do |params|
           %w[display state scope].each do |v|
