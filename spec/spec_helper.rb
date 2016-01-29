@@ -1,8 +1,10 @@
 $:.unshift File.expand_path('..', __FILE__)
 $:.unshift File.expand_path('../../lib', __FILE__)
 
-require 'simplecov'
-SimpleCov.start
+if RUBY_VERSION >= '1.9.0'
+  require 'simplecov'
+  SimpleCov.start
+end
 
 require 'rspec'
 require 'rack/test'
