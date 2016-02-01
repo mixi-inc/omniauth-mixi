@@ -103,7 +103,7 @@ And, open http://localhost:9292/ in your browser, then you will see the authenti
 
 ## Supported Rubies
 
-OmniAuth mixi is tested under 1.8.7, 1.9.2, 1.9.3 and JRuby.
+OmniAuth mixi is tested under 1.8.7, 1.9.2, 1.9.3, 2.0.0, 2.1, 2.2 and JRuby.
 
 [![CI Build
 Status](https://secure.travis-ci.org/mixi-inc/omniauth-mixi.png)](http://travis-ci.org/mixi-inc/omniauth-mixi)
